@@ -63,6 +63,7 @@ getPlanningScene(std::string robot_description) {
             new planning_scene_monitor::PlanningSceneMonitor(
                 robot_description));
   }
+  planning_scene_monitors[robot_description]->requestPlanningSceneState();
   planning_scene::PlanningSceneConstPtr planning_scene =
       planning_scene_monitors[robot_description]->getPlanningScene();
   if (!planning_scene) {
