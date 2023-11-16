@@ -75,7 +75,7 @@ getPlanningScene(std::string robot_description) {
 static bool getPositionIK(moveit_msgs::GetPositionIK::Request &request,
                           moveit_msgs::GetPositionIK::Response &response,
                           bool approximate) {
-  auto robot_model = getRobotModel(request.ik_request.robot_description);
+  auto robot_model = getRobotModel("");
   if (!robot_model) {
     response.error_code.val =
         moveit_msgs::MoveItErrorCodes::INVALID_OBJECT_NAME;
